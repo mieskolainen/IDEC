@@ -1,0 +1,12 @@
+hwclock --hctosys --utc
+mount -t proc proc /proc
+mount -o remount,rw /dev/root /
+mount /sys
+mount /dev/mmc0
+/disk/startup.sh
+ifconfig lo 127.0.0.1
+/disk/eth0.conf
+route add -net 127.0.0.0 netmask 255.255.255.0 lo
+ifconfig eth1 up
+dhcpcd eth1 &
+cat /etc/motd

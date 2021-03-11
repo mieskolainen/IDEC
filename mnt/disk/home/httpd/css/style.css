@@ -1,0 +1,636 @@
+@charset "utf-8";
+/*top, right, bottom and left*/
+
+a:link {
+	text-decoration: none;
+	color: #0cf;
+}
+a:visited {
+	text-decoration: none;
+	color: #0cf;
+}
+a:hover {
+	color: #0cf;
+	background: #404040;
+}
+a:active {
+	text-decoration: none;
+	color: #0cf;
+}
+
+#chart_small_div {
+	width:27em;
+	height:11.5em;
+}
+
+#chart_x_div {
+	width:54em;
+	height:16em;
+}
+
+#chart_y_div {
+	width:54em;
+	height:16em;
+}
+
+#FFT_div {
+	width:54em;
+	height:16em;
+}
+
+#css_bar_div {
+
+	padding-bottom:0.5em;
+	padding-top:0.5em;
+
+}
+
+.energy_bar_text {
+	color:white;
+	text-align:center;
+	padding-top:0.5em;
+	padding-right:0.3em;
+	padding-left:0.3em;
+}
+
+
+.energy_bar_start {
+	overflow:inherit;
+	float:left;
+	width:4em;
+	background-image: url(/images/transparent.png);
+	padding-top:0.5em;
+	padding-right:0.5em;
+	height:2.0em;
+	text-align:right
+}
+
+.energy_bar_end {
+
+	overflow:inherit;
+	z-index:10000;
+	background-image: url(/images/transparent.png);
+	float:left;
+	width:13em;
+	padding-top:0.5em;
+	padding-left:0.3em;
+	height:2.0em;
+	border-left:3px solid #CCCCCC;
+
+}
+
+
+.energy_bar_holder {
+	margin:0.25em;
+	overflow:hidden;
+	font-size:0.8em;
+}
+
+
+.energy_bar {
+	overflow:inherit;
+	float:left;
+	height:2.0em;
+}
+
+.energy_bar:hover {
+	background:#666666; /*BG color is a must for IE6*/
+	text-decoration:none;
+}
+
+.energy_bar span {
+	display:none;
+
+}
+
+.energy_bar:hover span {
+	display:block;
+	position:absolute;
+	background:#666666;
+	border:1px solid #F0F0F0;
+	color:#FFFFFF;
+	width:10em;
+	text-align: center;
+	opacity:0.90;
+}
+
+
+.push_button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	padding: 0.1em 0.6em 0.1em 0.6em;
+    border: 1px solid #585858;
+    color: #FFFFFF;
+    background: #484848 url(/images/bar_bg.jpg) repeat;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+
+}
+.push_button:hover {
+    border: 1px solid #585858;
+    background: #0cf;
+ 	color: #FFFFFF;
+}
+
+.push_button:active{
+    border: 1px solid #585858;
+    background: #383838;
+ 	color: #E8E8E8;
+}
+
+
+/* toptopbar -> power, tools, settings.... */
+.toptopbar {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    float: right;
+    font-size: 0.9em;
+
+}
+.toptopbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toptopbar ul li {
+    float: left;
+    margin: 0;
+    padding: 0.8em 0em 0em 0em;
+
+}
+
+.toptopbar ul li a {
+	color: #FFFFFF;
+	padding: 0.8em 0.7em 0.8em 0.7em;
+}
+
+.toptopbar ul li a:hover {
+	color: #FFFFFF;
+	background: #404040;
+}
+
+.toptopbar ul li #set {
+	background-color: #383838;
+	color: #0099FF;
+}
+
+
+/* toptopbar stops */
+
+
+/* topbar -> means underpages like live data, statistics, graphics...*/
+.topbar {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    float: left;
+    font-size: 0.9em;
+
+}
+.topbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar ul li {
+    float: left;
+    margin: 0;
+    padding: 0.8em 0em 0em 0em;
+
+}
+
+.topbar ul li a {
+	color: #FFFFFF;
+	padding: 0.8em 0.7em 0.8em 0.7em;
+}
+
+.topbar ul li a:hover {
+	color: #FFFFFF;
+	background: #404040;
+}
+
+.topbar ul li #set {
+	background-color: #383838;
+	color: #0099FF;
+}
+
+#main_bar_div { /*encapsulates toptopbar and topbar*/
+	background: #484848;
+	margin: 0 0 0.1em 0;
+	height: 2.55em;
+	border-top-width: 0.4em;
+	border-top-style: solid;
+	border-top-color: #666666;
+	-ms-filter:alpha(opacity=90);
+	opacity: 0.90;
+}
+
+
+/* topbar stops */
+
+
+/*table starts*/
+
+#mytable {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+#mytable caption {
+	padding: 0em 0em 0.4em 0em;
+	font: italic 0.875em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+
+#mytable th {
+	font: bold 0.85em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #E8E8E8;
+	border-right: 1px solid #B0B0B0;
+	border-bottom: 1px solid #B0B0B0;
+	border-top: 1px solid #B0B0B0;
+	letter-spacing: 0.18em;
+	text-align:center;
+	padding: 0.4em 0.4em 0.4em 0.8em;
+	background: url(/images/bar_bg.jpg) repeat;
+}
+
+#mytable th.nobg {
+	font: bold 0.9em Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #B8B8B8;
+	background: none;
+}
+
+#mytable td {
+	color: #000000;
+	border-right: 1px solid #B8B8B8;
+	border-bottom: 1px solid #B8B8B8;
+	background: #fff;
+	padding: 0.4em 0.4em 0.4em 0.8em;
+}
+
+
+#mytable td.alt {
+	color: #000000;
+	background: #F5FAFA;
+}
+
+#mytable td.alt2 {
+	color: #000000;
+	font: bold 1.5em Verdana, Arial, Helvetica, sans-serif;
+	padding: 0.3em 0.3em 0.3em 0.5em;
+	
+}
+
+#mytable th.spec {
+	color: #000000;
+	border-left: 1px solid #B8B8B8;
+	border-top: 0;
+	background: #fff url(/images/bullet1.gif) no-repeat;
+	font: bold 0.85em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+#mytable th.specalt {
+	color: #000000;
+	border-left: 1px solid #B8B8B8;
+	border-top: 0;
+	background: #f5fafa url(/images/bullet2.gif) no-repeat;
+	font: bold 0.85em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*table ends*/
+
+/* "RSS" BAR CLASS*/
+.RSS #item {
+	border-bottom: 1px solid #595959;
+	padding: 0.3em 0.3em 0.7em 0.5em;
+}
+
+.RSS #title {
+	color: #FFFFFF;
+	text-align: left;
+	font: bold 1em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.RSS #pubDate {
+	color: #0cf;
+	text-align: left;
+	padding: 0 0 0 0.4em;
+	font: 0.9em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	
+}
+/* "RSS" BAR CLASS ENDS*/
+
+
+/* FORM styling */
+
+.date_input {
+	color: #000000;
+    border: 1px solid #B0B0B0;
+    background-color: #FFFFFF;
+	padding: 0.15em 0.4em 0.15em 0.4em;
+	margin-right: 0.2em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+
+}
+
+/* FORM style ends */
+
+body  {
+	
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #E8E8E8;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	background: url(/images/earthlights.jpg);
+	background-color: #000000;
+	background-attachment: fixed;
+
+}
+
+
+h3 {
+	font-size: 1.1em;
+    border-bottom: 2px solid #666666;
+    color: #000000;
+	padding: 0.3em;
+
+}
+
+#headerbox_div {
+	font-size: 1.9em;
+	color: #F8F8F8;
+	font-weight: bold;
+	margin-top: 0.6em;
+	padding-top: 0.20em;
+	padding-right: 0.3em;
+	padding-bottom: 0em;
+	padding-left: 0.3em;
+
+}
+
+#bigbox_div {
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	background-color: #f5f5f5;
+	color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #585858;
+	padding-top: 0.85em;
+	padding-right: 0.6em;
+	padding-bottom: 1.2em;
+	padding-left: 0.6em;
+	margin-top: 3em;
+	margin-bottom: 1em;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	
+}
+
+#bigbox_dark_div {
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-top: 0.85em;
+	padding-right: 0.6em;
+	padding-bottom: 1.2em;
+	padding-left: 0.6em;
+	margin-bottom: 0.5em;
+	
+}
+
+#smallbox_div {
+	text-align: left;
+	background-color: #CCCCCC;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+
+}
+
+#powercalc_div {
+	
+	margin: 0.1em;
+	
+}
+
+#arrow_div {
+	
+	margin:0.1em;
+}
+
+#power_graph {
+	float: right;
+	margin:0.1em;
+}
+
+#overview {
+	float: right;
+}
+
+.thrColFixHdr #header_div {
+	width: 74em;
+	margin: 1em auto 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	padding: 0;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	background-color: #FFFFFF;
+	background-repeat: repeat-x;
+	background-image: url(/images/header_back.png);
+	height: 1.8em;
+	-ms-filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+
+.thrColFixHdr #header_div h1 {
+	color: #333333;
+	float: left;
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 0.2em 0.65em 0.3em 0.65em; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+	font-size: 1em;
+}
+
+.thrColFixHdr #container_div {
+	width: 74em;
+	margin:  0 auto 4em auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left;
+	/*background-color: #181818;*/
+	background-repeat: repeat;
+	background-image: url(/images/transparent.png);
+	
+	/*
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #383838;
+	border-left-color: #383838;
+	border-right-width: 3px;
+	border-left-width: 3px;*/
+	
+}
+
+.thrColFixHdr #uptime_div {
+	text-align: right;
+	padding: 12px 2px 6px 2px;
+	font-size: 0.7em;
+}
+
+.thrColFixHdr #mainContent_div {
+	margin: 0em 13.5em 0em 1.5em; /* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+	padding: 0; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+
+}
+
+.thrColFixHdr #sidebar2_div {
+	float: right; /* since this element is floated, a width must be given */
+	color: #F0F0F0;
+	width: 12.0em; /* the background color will be displayed for the length of the content in the column, but no further */
+	margin: 0em 0em 0em 0em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	background-repeat: repeat;
+	background-image: url(/images/transparent.png);
+	
+}
+
+.thrColFixHdr #sidebar2_div h4 a {	
+	font-size: 1.05em;
+    border: 1px solid #585858;
+    color: #FFFFFF;
+    background: #484848 url(/images/bar_bg.jpg) repeat;
+	padding: 0.3em 0.5em 0.3em 0.5em;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+}
+
+.thrColFixHdr #sidebar2_div h4 a:hover {	
+    border: 1px solid #585858;
+    color: #FFFFFF;
+	background: #0cf;
+}
+
+.thrColFixHdr #sidebar2_div h4 a:active {	
+    border: 1px solid #585858;
+    background: #383838;
+ 	color: #E8E8E8;
+}
+
+
+
+.thrColFixHdr #footer_div {
+	padding: 0em 0.7em 0em 0.7em;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 5px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #484848;
+	border-left-color: #000000;
+	-ms-filter:alpha(opacity=90);
+	opacity: 0.90;
+} 
+
+.thrColFixHdr #footer_div p {
+
+	margin: 0em; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+
+	padding: 0.7em 0em; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+
+}
+
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+
+	float: right;
+
+	margin-left: 0.6em;
+
+}
+
+.fltlft { /* this class can be used to float an element left in your page */
+
+	float: left;
+
+	margin-right: 0.6em;
+
+}
+
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+
+	clear:both;
+
+    height:0;
+
+    font-size: 0.875em;
+
+    line-height: 0;
+
+}
+
+
+/*LOGIN & HELP_PAGE*/
+
+.oneColElsCtrHdr #container {
+	color: #000000;
+	width: 21em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #FFFFFF;
+	margin: 1em auto 1em auto; /* the auto margins (in conjunction with a width) center the page */
+	padding: 0px 0px 0px 0px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColElsCtrHdr #header {
+	color: #000000;
+	padding: 0 0.5em 0 0.5em;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	background-color: #DDDDDD;
+	background-image: url(/images/header_back.png);
+} 
+.oneColElsCtrHdr #header h1 {
+	color: #000000;
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 0.3em 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+.oneColElsCtrHdr #mainContent {
+	padding: 0 1.2em; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #FFFFFF;
+}
+.oneColElsCtrHdr #footer {
+	padding: 0em 0.7em 0em 0.7em;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 5px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #484848;
+	border-left-color: #000000;
+	background: #666666;
+} 
+.oneColElsCtrHdr #footer p {
+	color: #FFFFFF;
+	font-size: 0.9em;
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 0.5em 0em 0.3em 0em; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}

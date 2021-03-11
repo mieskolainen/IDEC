@@ -1,0 +1,3 @@
+root:$1$$6Ba.3vi9IZJ1cJqi.XX7v/:0:0:root:/:/bin/sh
+#guest:!$1$$ysap7EeB9ODCrO46Psdbq/:500:500:Linux User,,,:/home/guest:/bin/sh
+#sshd:x:100:65534::/var/run/sshd:/bin/false

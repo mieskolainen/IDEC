@@ -1,0 +1,15 @@
+ 
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+
+# run-parts
+# m h dom mon dow user  command
+
+# Set hardware clock
+*/30 * * * * root hwclock --systohc --utc
+
+# Run clustering algorithm
+#0 * * * * root /disk/cluster --energy hard 0 1-12-2011
+

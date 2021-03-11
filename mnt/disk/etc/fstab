@@ -1,0 +1,8 @@
+/dev/sys	/sys		sysfs	rw	0 0
+/dev/sda	/mnt/sda	vfat	rw	0 0
+/dev/sda1	/mnt/sda1	vfat	rw	0 0
+/dev/sdb	/mnt/sdb	vfat	rw	0 0
+/dev/sdb1	/mnt/sdb1	vfat	rw	0 0
+/dev/mtdblock3	/mnt/disk	jffs2	rw	0 0
+/dev/mmc0	/mnt/mmc	vfat	rw	0 0
+

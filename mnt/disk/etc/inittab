@@ -1,0 +1,7 @@
+inet:unknown:/bin/inetd
+slog:unknown:/sbin/syslogd -n
+klog:unknown:/sbin/klogd -n
+cron:unknown:/disk/cron
+ntpd:unknown:/disk/ntpd/ntpd -c /disk/ntpd/ntp.conf
+ltpd:unknown:/disk/lighttpd/lighttpd -f /disk/lighttpd/lighttpd.conf
+calc:unknown:/disk/powercalc

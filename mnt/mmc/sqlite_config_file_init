@@ -1,0 +1,59 @@
+DROP TABLE IO_DATA;
+DROP TABLE OW_DATA;
+
+
+CREATE TABLE IO_DATA (
+
+deviceId INTEGER PRIMARY KEY UNIQUE,
+deviceActive INTEGER DEFAULT 1,
+devicePort INTEGER DEFAULT 8,
+deviceTypePulse VARCHAR(10),
+deviceTypeCalc VARCHAR(10),
+deviceName VARCHAR(15),
+deviceLog INTEGER DEFAULT 0,
+deviceMeterConst INTEGER DEFAULT 1000,
+deviceCalcTime INTEGER DEFAULT 3,
+deviceDelta INTEGER DEFAULT 20,
+deviceAlarm INTEGER DEFAULT 0,
+deviceLow_limit DOUBLE DEFAULT 0.0,
+deviceHigh_limit DOUBLE DEFAULT 0.0
+
+)
+;
+
+
+
+
+CREATE TABLE OW_DATA (
+
+deviceId INTEGER PRIMARY KEY UNIQUE,
+deviceActive INTEGER DEFAULT 1,
+deviceHex VARCHAR(50),
+deviceType VARCHAR(10),
+deviceName VARCHAR(15),
+deviceLog INTEGER DEFAULT 0,
+deviceAlarm INTEGER DEFAULT 0,
+deviceLow_limit DOUBLE DEFAULT 0.0,
+deviceHigh_limit DOUBLE DEFAULT 0.0,
+deviceCalibration DOUBLE DEFAULT 0.0
+
+)
+;
+
+
+
+
+INSERT INTO IO_DATA VALUES (0,1,8,'energy','power','vattenfall',1,1000,3,20,0,0,0);
+INSERT INTO IO_DATA VALUES (1,1,8,'energy','power','vattenfall1',1,1000,3,20,0,0,0);
+INSERT INTO IO_DATA VALUES (2,1,8,'energy','power','vattenfall2',1,1000,3,20,0,0,0);
+INSERT INTO IO_DATA VALUES (3,1,8,'energy','power','vattenfall3',1,1000,3,20,0,0,0);
+INSERT INTO IO_DATA VALUES (4,1,8,'energy','power','vattenfall4',1,1000,3,20,0,0,0);
+INSERT INTO IO_DATA VALUES (5,1,8,'energy','power','vattenfall5',1,1000,3,20,0,0,0);
+
+
+INSERT INTO OW_DATA VALUES (0,1,'0x10 0x96 0x27 0xA5 0x01 0x08 0x00 0xA4','temp','outdoor',1,0,0,0,0);
+INSERT INTO OW_DATA VALUES (1,1,'0x10 0x11 0x29 0xA5 0x01 0x08 0x00 0x69','temp','garage',1,0,0,0,0);
+INSERT INTO OW_DATA VALUES (2,1,'0x10 0x5C 0x10 0xA5 0x01 0x08 0x00 0x21','temp','living',1,0,0,0,0);
+INSERT INTO OW_DATA VALUES (3,1,'0x10 0x6E 0x23 0xA5 0x01 0x08 0x00 0x68','temp','technical',1,0,0,0,0);
+INSERT INTO OW_DATA VALUES (4,1,'0x10 0xF9 0x18 0xA5 0x01 0x08 0x00 0xA8','temp','heater',1,0,0,0,0);
+INSERT INTO OW_DATA VALUES (5,1,'0x10 0xBF 0x26 0xA5 0x01 0x08 0x00 0x49','temp','fireplace',1,0,0,0,0);
